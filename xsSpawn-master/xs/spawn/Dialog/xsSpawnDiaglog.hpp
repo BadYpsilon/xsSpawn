@@ -2,13 +2,14 @@
 // 											//
 // xsSpawn | Ground Spawn or Halo Selection //
 // by bambam of xstremegaming.com		    //
-//											//
+// edited by Kuchenplatte for the FIX
+// Date: 21.07.2019											//
 //////////////////////////////////////////////
 
 class xstremeGroundorHaloDialog
 {
 	idd = 86000;
-	access = 3;
+	//access = 3;
 	duration = -1;
 	onLoad = "uiNamespace setVariable ['xstremeGroundorHaloDialog', _this select 0];";
 	onUnload = "uiNamespace setVariable ['xstremeGroundorHaloDialog', displayNull];";
@@ -48,7 +49,7 @@ class xstremeGroundorHaloDialog
 			sizeEx = "30 * pixelH";
 			colorFocused[] = {"199/255","38/255","81/255",0.8};
 			colorBackgroundActive[] = {"199/255","38/255","81/255",0.8};
-			onButtonClick = "[1] call ExileClient_gui_selectSpawnLocation_event_onSpawnButtonClick; closeDialog 86000;";
+			onButtonClick = "[1] spawn ExileClient_gui_selectSpawnLocation_event_onSpawnButtonClick; closeDialog 86000;";
 		};
 		class xsSpawnGround: xsSpawnRscButton
         {
@@ -65,7 +66,7 @@ class xstremeGroundorHaloDialog
 			sizeEx = "30 * pixelH";
 			colorFocused[] = {"199/255","38/255","81/255",0.8};
 			colorBackgroundActive[] = {"199/255","38/255","81/255",0.8};
-			onButtonClick = "[0] call ExileClient_gui_selectSpawnLocation_event_onSpawnButtonClick; closeDialog 86000;";
+			onButtonClick = "[0] spawn ExileClient_gui_selectSpawnLocation_event_onSpawnButtonClick; closeDialog 86000;";
 		};
 		class xsSpawnLocations: xsSpawnRscListbox
 		{
@@ -91,6 +92,7 @@ class xstremeGroundorHaloDialog
 			maxSatelliteAlpha = 0.75;
 			alphaFadeStartScale = 1.15;
 			alphaFadeEndScale = 1.29;
+			widthRailWay = 1;
 			colorOutside[] = {0.0,0.0,0.0,1.0};
 		};
 		class textbar: xsSpawnRscStructuredText
